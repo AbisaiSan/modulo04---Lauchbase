@@ -1,0 +1,32 @@
+{
+    "instructors": [
+        {
+            "id": 1,
+            "avatar_url": "https://www.olx.com.br/",
+            "name": "E. RIBEIRO",
+            "birth": 976492800000,
+            "gender": "M",
+            "services": "futebol",
+            "created_at": 1595878975671
+        },
+        {
+            "id": 2,
+            "avatar_url": "https://app.rocketseat.com.br/node/fase-03-1/group/cadastro-de-instrutores/lesson/recebendo-dados-do-front-end-com-req-body",
+            "name": "Abisai Santos",
+            "birth": 866678400000,
+            "gender": "M",
+            "services": "futebol",
+            "created_at": 1595878993992
+        },
+        {
+            "id": 3,
+            "avatar_url": "https://www.olx.com.br/",
+            "name": "Nairis",
+            "birth": 477273600000,
+            "gender": "F",
+            "services": "crossfit",
+            "created_at": 1595879014030
+        }
+        
+    ]
+}

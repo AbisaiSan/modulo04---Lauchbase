@@ -2,6 +2,8 @@ const express = require('express')
 
 //Variavel responsavel pelas rotas
 const routes = express.Router()
+//Chamando arquivo instructors com as funções (CRUD)
+const instructors = require('./instructors')
 
 routes.get('/', function(req, res){
   return res.redirect("/instructors")
@@ -10,6 +12,15 @@ routes.get('/', function(req, res){
 routes.get('/instructors', function(req, res){
   return res.render("instructors/index")
 })
+
+routes.get('/instructors/create', function(req, res){
+  return res.render("instructors/create")
+})
+
+routes.get('/instructors/:id', instructors.show)
+
+//Recebendo a requisição via post do corpo
+routes.post('/instructors', instructors.post)
 
 routes.get('/members', function(req, res){
   return res.send("/members")
