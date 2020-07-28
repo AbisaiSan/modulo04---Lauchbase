@@ -1,28 +1,8 @@
 const fs = require('fs')
 const data = require('./data.json')
+const {age} = require('./utils')
+
 //Create
-
-
-//SHOWS
-exports.show = function(req, res){
-  const {id} = req.params
-
-  const foundInstructor = data.instructors.find(function(instructor){
-    return instructor.id == id
-  })
-  if(!foundInstructor ) return res.send("instrutor não existe")
-
-  
-
-  const instructor = {
-    ...foundInstructor,
-    age:"",
-    services:foundInstructor.services.split(","),
-    created_at:""
-  }
-
-  return res.render("instructors/show", {instructor})
-}
 
 //Validação de dados
 
@@ -75,7 +55,37 @@ exports.post = function(req, res){
   //return res.send(req.body)
 }
 
+//SHOWS
+exports.show = function(req, res){
+  const {id} = req.params
+
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+  if(!foundInstructor ) return res.send("instrutor não existe")
+
+  const instructor = {
+    ...foundInstructor,
+    age: age(foundInstructor.birth),
+    services:foundInstructor.services.split(","),
+    created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
+  }
+
+  return res.render("instructors/show", {instructor})
+}
+
 //Update
 
+exports.edit = function(req, res){
+
+  const {id} = req.params
+
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+  if(!foundInstructor ) return res.send("instrutor não existe")
+
+  return res.render("instructors/edit", {instructor: foundInstructor})
+}
 
 //Delete
