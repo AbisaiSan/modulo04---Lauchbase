@@ -10,6 +10,9 @@ const routes = require('./routes')
 //colocando o express no server
 const server = express()
 
+//Usado para metodos put e delete
+const methodOverride = require('method-override')
+
 
 //Configurando o express para arquivos estáticos
 server.use(express.static('public'))
@@ -17,7 +20,10 @@ server.use(express.static('public'))
 //Responsavel por fazer funcionar o req.body
 server.use(express.urlencoded({extended:true}))
 
+server.use(methodOverride('_method'))
+
 server.use(routes)
+
 
 server.set("view engine","njk")
 

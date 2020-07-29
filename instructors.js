@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('./data.json')
-const {age} = require('./utils')
+const {age, date} = require('./utils')
 
 //Create
 
@@ -47,7 +47,7 @@ exports.post = function(req, res){
   
 
   fs.writeFile("data.json", JSON.stringify(data, null,4), function(err){
-      if(err) return res.send("Erro de escrita") 
+      if(err) return res.send("write fail erro") 
         return res.redirect('/instructors')
       
   } )
@@ -74,7 +74,7 @@ exports.show = function(req, res){
   return res.render("instructors/show", {instructor})
 }
 
-//Update
+//Edit = apenas página para editar
 
 exports.edit = function(req, res){
 
@@ -85,7 +85,67 @@ exports.edit = function(req, res){
   })
   if(!foundInstructor ) return res.send("instrutor não existe")
 
-  return res.render("instructors/edit", {instructor: foundInstructor})
+  const instructor = {
+    ...foundInstructor,
+    birth:date(foundInstructor.birth)
+  }
+
+
+  
+
+  return res.render("instructors/edit", {instructor})
 }
 
+//Update = put
+
+exports.put = function(req,res) {
+  //Buscando dados do corpo do arquivo
+  const {id} = req.body
+
+  let index = 0
+
+  const foundInstructor = data.instructors.find(function(instructor, foundIndex){
+    instructor.id 
+
+    if( id == instructor.id) {
+      index = foundIndex
+      return true
+    }
+  })
+  if(!foundInstructor ) return res.send("instrutor não existe")
+
+  const instructor = {
+        ...foundInstructor,
+        ...req.body,
+         birth:Date.parse(req.body.birth)
+  }
+
+  data.instructors[index] = instructor
+
+  fs.writeFile("data.json", JSON.stringify(data, null,4), function(err){
+    if(err) return res.send("write fail erro") 
+
+      return res.redirect(`/instructors/${id}`)
+    
+} )
+
+}
+
+
 //Delete
+
+exports.delete = function(req, res) {
+  const {id} = req.body
+
+  const filteredInstructors = data.instructors.filter(function(instructor){
+    //O que significa ser diferente desse id?
+    return instructor.id != id
+  })
+
+  data.instructors = filteredInstructors
+
+  fs.writeFile("data.json", JSON.stringify(data, null, 4), function(err) {
+    if(err) return res.send("write fail erro")
+    return res.redirect(`/instructors`)
+  })
+}

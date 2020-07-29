@@ -23,6 +23,11 @@ routes.get('/instructors/:id', instructors.show)
 
 //Recebendo a requisição via post do corpo
 routes.post('/instructors', instructors.post)
+//Recebendo dados para update
+routes.put('/instructors', instructors.put)
+
+// rota para deletar dados
+routes.delete('/instructors', instructors.delete)
 
 routes.get('/members', function(req, res){
   return res.send("/members")
