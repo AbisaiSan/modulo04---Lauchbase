@@ -2,8 +2,38 @@ const fs = require('fs')
 const data = require('./data.json')
 const {age, date} = require('./utils')
 
-//Create
 
+//INDEX
+exports.index = function(req, res){
+
+
+
+  return res.render("instructors/index", {instructors: data.instructors})
+}
+
+//SHOWS
+exports.show = function(req, res){
+  const {id} = req.params
+
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+  if(!foundInstructor ) return res.send("instrutor não existe")
+
+  const instructor = {
+    ...foundInstructor,
+    age: age(foundInstructor.birth),
+    services:foundInstructor.services.split(","),
+    created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
+  }
+
+  return res.render("instructors/show", {instructor})
+}
+
+
+
+
+//Create
 //Validação de dados
 
 exports.post = function(req, res){
@@ -55,24 +85,6 @@ exports.post = function(req, res){
   //return res.send(req.body)
 }
 
-//SHOWS
-exports.show = function(req, res){
-  const {id} = req.params
-
-  const foundInstructor = data.instructors.find(function(instructor){
-    return instructor.id == id
-  })
-  if(!foundInstructor ) return res.send("instrutor não existe")
-
-  const instructor = {
-    ...foundInstructor,
-    age: age(foundInstructor.birth),
-    services:foundInstructor.services.split(","),
-    created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
-  }
-
-  return res.render("instructors/show", {instructor})
-}
 
 //Edit = apenas página para editar
 
@@ -117,7 +129,8 @@ exports.put = function(req,res) {
   const instructor = {
         ...foundInstructor,
         ...req.body,
-         birth:Date.parse(req.body.birth)
+         birth:Date.parse(req.body.birth),
+         id: Number(req.body.id)
   }
 
   data.instructors[index] = instructor

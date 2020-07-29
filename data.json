@@ -2,7 +2,7 @@
     "instructors": [
         {
             "id": 1,
-            "avatar_url": "https://www.olx.com.br/",
+            "avatar_url": "https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
             "name": "E. RIBEIRO",
             "birth": 976492800000,
             "gender": "M",
@@ -11,7 +11,7 @@
         },
         {
             "id": 2,
-            "avatar_url": "https://app.rocketseat.com.br/node/fase-03-1/group/cadastro-de-instrutores/lesson/recebendo-dados-do-front-end-com-req-body",
+            "avatar_url": "https://images.unsplash.com/photo-1585681614545-cd8c7b9d92b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
             "name": "Abisai Santos",
             "birth": 866678400000,
             "gender": "M",
@@ -20,7 +20,7 @@
         },
         {
             "id": 3,
-            "avatar_url": "https://www.olx.com.br/",
+            "avatar_url": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
             "name": "Nairis",
             "birth": 477273600000,
             "gender": "F",
@@ -29,7 +29,7 @@
         },
         {
             "id": 4,
-            "avatar_url": "https://app.rocketseat.com.br/node/fase-03-1/group/cadastro-de-instrutores/lesson/recebendo-dados-do-front-end-com-req-body",
+            "avatar_url": "https://images.unsplash.com/photo-1550345332-09e3ac987658?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
             "name": "Deborah",
             "birth": 858297600000,
             "gender": "F",
@@ -38,7 +38,7 @@
         },
         {
             "id": 5,
-            "avatar_url": "https://www.olx.com.br/",
+            "avatar_url": "https://images.unsplash.com/photo-1550259979-ed79b48d2a30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=704&q=80",
             "name": "Mariana",
             "birth": 976838400000,
             "gender": "F",
@@ -46,8 +46,8 @@
             "created_at": 1595959052230
         },
         {
-            "id": "6",
-            "avatar_url": "https://app.rocketseat.com.br/node/fase-03-1/group/cadastro-de-instrutores/lesson/recebendo-dados-do-front-end-com-req-body",
+            "id": 6,
+            "avatar_url": "https://images.unsplash.com/photo-1485727749690-d091e8284ef3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
             "name": "Nayara Araujo",
             "birth": 837129600000,
             "gender": "F",
@@ -56,7 +56,7 @@
         },
         {
             "id": 7,
-            "avatar_url": "https://www.olx.com.br/",
+            "avatar_url": "https://images.unsplash.com/photo-1576511843319-715ce1f27494?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
             "name": "Rebeca",
             "birth": 896572800000,
             "gender": "F",
