@@ -1,6 +1,58 @@
 {
-    "members":[],
-
+    "members": [
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1576511841760-6d3872d3ab8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            "name": "Abisai da Silva Santos",
+            "email": "abisaisantos36@gmail.com",
+            "contato": "981322900",
+            "contatoEmergency": "997235654",
+            "birth": 866678400000,
+            "gender": "M",
+            "blood": "A1",
+            "weight": "69",
+            "height": "168",
+            "id": 1
+        },
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1573124356790-446c0081d9ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            "name": "Jennifer",
+            "email": "jenn@gmail.com",
+            "contato": "988786520",
+            "contatoEmergency": "988786520",
+            "birth": 792806400000,
+            "gender": "F",
+            "blood": "A1",
+            "weight": "60",
+            "height": "165",
+            "id": 2
+        },
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1576511746292-abb440c1b9a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+            "name": "Charles",
+            "email": "cha@gmail.com",
+            "contato": "9898989898",
+            "contatoEmergency": "9898989898",
+            "birth": 887500800000,
+            "gender": "M",
+            "blood": "A1",
+            "weight": "80",
+            "height": "190",
+            "id": 3
+        },
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1583187938491-1dcc103c9e14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80",
+            "name": "Rafaella",
+            "email": "rafag@gmail.com",
+            "contato": "8898982562",
+            "contatoEmergency": "8898982562",
+            "birth": 850608000000,
+            "gender": "F",
+            "blood": "A1",
+            "weight": "55",
+            "height": "163",
+            "id": 4
+        }
+    ],
     "instructors": [
         {
             "id": 1,

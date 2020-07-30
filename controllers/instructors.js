@@ -11,30 +11,10 @@ exports.index = function(req, res){
   return res.render("instructors/index", {instructors: data.instructors})
 }
 
-//SHOWS
-exports.show = function(req, res){
-  const {id} = req.params
-
-  const foundInstructor = data.instructors.find(function(instructor){
-    return instructor.id == id
-  })
-  if(!foundInstructor ) return res.send("instrutor não existe")
-
-  const instructor = {
-    ...foundInstructor,
-    age: age(foundInstructor.birth),
-    services:foundInstructor.services.split(","),
-    created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
-  }
-
-  return res.render("instructors/show", {instructor})
-}
-
 //Create
   exports.create = function(req, res){
     return res.render("instructors/create")
   }
-
 
 
 //POST
@@ -82,13 +62,31 @@ exports.post = function(req, res){
 
   fs.writeFile("data.json", JSON.stringify(data, null,4), function(err){
       if(err) return res.send("write fail erro") 
-        return res.redirect('/instructors')
+        return res.redirect(`/instructors/${id}`)
       
   } )
 
   //return res.send(req.body)
 }
 
+//SHOWS
+exports.show = function(req, res){
+  const {id} = req.params
+
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+  if(!foundInstructor ) return res.send("instrutor não existe")
+
+  const instructor = {
+    ...foundInstructor,
+    age: age(foundInstructor.birth),
+    services:foundInstructor.services.split(","),
+    created_at: new Intl.DateTimeFormat("en-GB").format(foundInstructor.created_at)
+  }
+
+  return res.render("instructors/show", {instructor})
+}
 
 //Edit = apenas página para editar
 
@@ -103,7 +101,7 @@ exports.edit = function(req, res){
 
   const instructor = {
     ...foundInstructor,
-    birth:date(foundInstructor.birth)
+    birth:date(foundInstructor.birth).iso
   }
 
 
