@@ -244,7 +244,8 @@ tbody tr td:first-child span {
   border: 2px solid white;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container > a {
   background-color: var(--primary-color);
   padding: 8px 16px;
   text-decoration: none;
@@ -254,6 +255,11 @@ tbody tr td:last-child a {
   border-radius: 4px;
 }
 
+.table-container > a{
+  margin-left:15px ;
+  margin-bottom: 20px !important;
+  display: inline-block;
+}
 .table-container thead tr th:last-child,
 td:last-child {
   text-align: center;
